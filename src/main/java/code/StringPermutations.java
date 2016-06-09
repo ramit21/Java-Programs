@@ -1,3 +1,5 @@
+package code;
+
 /**
  * Generate all permutations of a given string For a given 'n', print all valid
  * combination of brackets. Eg. n=2, then (()), ()()

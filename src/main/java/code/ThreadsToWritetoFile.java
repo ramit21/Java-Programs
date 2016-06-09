@@ -1,3 +1,5 @@
+package code;
+
 import java.io.*;
 
 //Three threads having different values, all should write to a file in a sequential order (ie 123456789)
@@ -79,7 +81,7 @@ class MyFileWriter {
 	}
 
 	public void writeToFile() {
-		File file = new File("C:\\myFile.txt");
+		File file = new File("src/main/resources/ThreadOutputFile.txt");
 		try {
 			FileWriter fs = new FileWriter(file);
 			for (int i = 1; i < 10; i++) {

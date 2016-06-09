@@ -1,3 +1,5 @@
+package code;
+
 import java.util.Map;
 
 // Run with VM paramter -XX:+PrintGC to see GC activiy and

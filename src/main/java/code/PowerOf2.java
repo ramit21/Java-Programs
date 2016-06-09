@@ -1,3 +1,5 @@
+package code;
+
 //to check if a no is a power of two
 public class PowerOf2 {
 int no = 15;

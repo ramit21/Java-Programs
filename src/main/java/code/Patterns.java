@@ -1,3 +1,4 @@
+package code;
 /**
  * For a given n, print a pyramid of stars, with n stars at the base Eg. for
  * n=5:

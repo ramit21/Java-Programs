@@ -1,3 +1,4 @@
+package code;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -15,11 +16,11 @@ public class FileWritingUsingBarrier {
 	
 	public static void main(String[] args) {
 		//All threads to share string buffer for output and the cyclic bariier
-		File file1 = new File("src/resources/storyData1.txt");
-		File file2 = new File("src/resources/storyData2.txt");
-		File file3 = new File("src/resources/storyData3.txt");
+		File file1 = new File("src/main/resources/storyData1.txt");
+		File file2 = new File("src/main/resources/storyData2.txt");
+		File file3 = new File("src/main/resources/storyData3.txt");
 		
-		File file4 = new File("src/resources/storyDataOutput.txt");
+		File file4 = new File("src/main/resources/storyDataOutput.txt");
 		
 		StringBuffer buf = new StringBuffer();
 		ExecutorService executor = Executors.newFixedThreadPool(3);

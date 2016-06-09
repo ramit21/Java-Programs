@@ -1,3 +1,5 @@
+package code;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.BlockingQueue;
@@ -110,7 +112,7 @@ class Taxi implements Runnable {
 	public boolean isStopped() {
 		return isStopped;
 	}
-
+	
 	@Override
 	public void run() {
 		while (!isStopped) {

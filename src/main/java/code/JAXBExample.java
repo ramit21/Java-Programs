@@ -1,3 +1,4 @@
+package code;
 import java.io.File;
 
 import javax.xml.bind.JAXBContext;
@@ -12,7 +13,7 @@ public class JAXBExample {
 	public static void main(String[] args) {
 
 		try {
-			File file = new File("src/resources/customerData.xml");
+			File file = new File("src/main/resources/customerData.xml");
 			JAXBContext jaxbContext = JAXBContext.newInstance(Customer.class);
 			Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
 			Customer customer = (Customer) jaxbUnmarshaller.unmarshal(file);

@@ -1,3 +1,4 @@
+package code;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -55,8 +56,8 @@ public class DBOperationsProblem {
 	}
 
 	public static void main(String[] args) {
-		File file1 = new File("src/resources/data.txt");
-		File file2 = new File("src/resources/dataColumns.txt");
+		File file1 = new File("src/main/resources/data.txt");
+		File file2 = new File("src/main/resources/dataColumns.txt");
 		List<DataRow> data = readFile(file1, file2);
 		String[] selectColumns = { "fname", "lname" };
 		// Operations.OperationType opr = Operations.OperationType.SELECT;

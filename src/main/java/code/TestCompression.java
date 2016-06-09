@@ -1,3 +1,5 @@
+package code;
+
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
 import java.io.ByteArrayOutputStream;
@@ -32,12 +34,12 @@ public class TestCompression {
 	public static void main(String[] args) {
 		try {
 			BufferedOutputStream dest = null;
-			FileInputStream fis = new FileInputStream("src/resources/temp.txt");
+			FileInputStream fis = new FileInputStream("src/main/resources/temp.txt");
 			BufferedInputStream bufinStream = new BufferedInputStream(fis);
 			// String string = bufinStream.
 			// System.out.println("string >> "+string);
 
-			FileOutputStream outStream = new FileOutputStream("src/resources/temp2.txt");
+			FileOutputStream outStream = new FileOutputStream("src/main/resources/temp2.txt");
 			// GZIPOutputStream goutStream = new GZIPOutputStream(outStream);
 			byte[] contents = new byte[1024];
 
