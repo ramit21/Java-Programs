@@ -6,4 +6,6 @@ This repo contains standalone Java programs to touch upon various programming qu
 
 Maven command for scaffolding a simple Java project like this:
 
+```sh
 mvn archetype:generate -DgroupId=code -DartifactId=Java-Programs -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
+```
