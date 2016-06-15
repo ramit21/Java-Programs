@@ -20,7 +20,7 @@ public class FileWritingUsingBarrier {
 		File file2 = new File("src/main/resources/storyData2.txt");
 		File file3 = new File("src/main/resources/storyData3.txt");
 		
-		File file4 = new File("src/main/resources/storyDataOutput.txt");
+		File file4 = new File("src/main/resources/output/storyDataOutput.txt");
 		
 		StringBuffer buf = new StringBuffer();
 		ExecutorService executor = Executors.newFixedThreadPool(3);
