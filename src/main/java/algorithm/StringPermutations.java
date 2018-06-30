@@ -1,4 +1,4 @@
-package code;
+package algorithm;
 
 /**
  * Generate all permutations of a given string For a given 'n', print all valid
