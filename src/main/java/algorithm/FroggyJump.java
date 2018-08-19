@@ -1,4 +1,5 @@
 package algorithm;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
@@ -14,10 +15,28 @@ public class FroggyJump {
 	
 	public static void main(String[] args) {
 		int[] arr = {2,1,3,0,3,0,1};
-		System.out.println(minJumps(arr));
+		System.out.println(minJumpsBfs(arr));
+		System.out.println(minJumpsDfs(arr, 0, 0));//no path exists if MAX_VALUE is returned
 	}
 	
-	private static int minJumps(int[] arr){
+	private static int minJumpsDfs(int[] arr, int index, int jumps){
+		int cur = arr[index];
+		if(cur == 0 || index >= arr.length){
+			return Integer.MAX_VALUE;
+		}
+		List<Integer> curJumps = new ArrayList<>();
+		for(int i=1; i<=cur; i++){
+			if(index+i == arr.length){
+				return jumps+1;
+			}else{
+				curJumps.add(minJumpsDfs(arr, index + i, jumps+1));
+			}
+		}
+		Collections.sort(curJumps);
+		return curJumps.get(0);
+	}
+	
+	private static int minJumpsBfs(int[] arr){
 		Queue<JumpEntry> q = new LinkedList<JumpEntry>();
 		q.add(new JumpEntry(0, arr[0], 0));
 		List<Integer> jumps = new LinkedList<Integer>();
