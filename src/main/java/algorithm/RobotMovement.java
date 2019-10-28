@@ -13,13 +13,24 @@ import java.util.*;
 
 public class RobotMovement{
 
-  // your code
+  // your code in this function
   public static Integer[] walk( String path ) {
-  return new Integer[] {0, 0};
+	  int x = 0;
+	  int y = 0;
+	  
+	  char[] arr = path.toCharArray();
+	  for(int i=0; i< arr.length; i++) {
+		  if(arr[i] == 'U') y++;
+		  if(arr[i] == 'D') y--;
+		  if(arr[i] == 'L') x--;
+		  if(arr[i] == 'R') x++;
+	  }
+	  
+	  return new Integer[] {x, y};
   }
 
   public static boolean isEqual(Integer[] a, Integer[] b) {
-  return Arrays.equals(a, b);
+	  return Arrays.equals(a, b);
   }
 
   public static boolean pass() {
@@ -54,7 +65,7 @@ public class RobotMovement{
 
   public static void main(String[] args) {
   if(pass()){
-    System.out.println("{Pass");
+    System.out.println("Pass");
   } else {
     System.out.println("Test failures");
   }

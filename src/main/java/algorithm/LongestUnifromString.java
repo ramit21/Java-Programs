@@ -15,13 +15,14 @@ public class LongestUnifromString {
   static int[] longestUniformSubstring(String input){
     int longestStart = -1;
     int longestLength = 0;
-
+    
+    
     // your code goes here
     return new int[]{ longestStart, longestLength };
   }
 
   public static void main(String[] args) {
-    testCases.put("", new int[]{-1, 0});
+    testCases.put("", new int[]{-1, 0});  //Always write code testing for edge conditions
     testCases.put("10000111", new int[]{1, 4});
     testCases.put("aabbbbbCdAA", new int[]{2, 5});
 

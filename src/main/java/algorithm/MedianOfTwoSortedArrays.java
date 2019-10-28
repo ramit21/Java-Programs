@@ -1,5 +1,11 @@
 package algorithm;
 
+/* 
+ * Approach : Start partitioning the two arrays into two groups of halves 
+ * (not two parts, but both partitioned should have same number of elements). 
+ * The first half contains some first elements from the first and the second arrays, 
+ * and the second half contains the rest (or the last) elements form the first and the second arrays.
+ * Because the arrays can be of different sizes, it does not mean to take every half from each array. */
 public class MedianOfTwoSortedArrays {
 
 	// a: 1,2,5,11,15 // b: 3 4 13 17 18

@@ -1,7 +1,11 @@
 package algorithm;
 
-import java.io.*;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 /*
  * This program prints set of anagrams together in given string 
@@ -17,11 +21,35 @@ public class GroupAnagram {
   
   static void setOfAnagrams(String inputString){ 
     
-    //your code goes here
+    String[] stringArr = input.split("\\s+");
     
+   Map<String, List<String>> groupedMap = new LinkedHashMap<>();
+   
+    Arrays.stream(stringArr).forEach(s-> {
+    	String sorted = sortCharacters(s);
+    	List<String> groupedList = groupedMap.get(sorted);
+    	if(groupedList == null) {
+    		groupedList = new ArrayList<>();
+    	}
+    	groupedList.add(s);
+    	groupedMap.put(sorted, groupedList);
+    });
     
+    StringBuffer sb = new StringBuffer();
+    groupedMap.values().stream().forEach(l-> {
+    	String str = l.stream().map(Object::toString).collect(Collectors.joining(" ")); //Note how to convert list to a string
+    	sb.append(str);
+    	sb.append(" ");
+    }); 
+    
+    System.out.println(sb.toString());
   }
   
+  private static String sortCharacters(String str) {
+	  char[] charArr = str.toCharArray();
+	  Arrays.sort(charArr);
+	  return new String(charArr);
+  }
   
   public static void main(String[] args) {
     
