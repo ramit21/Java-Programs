@@ -2,7 +2,7 @@ package algorithm;
 
 public class SquareRoot {
   /*
-  *   double squareRoot( double x )
+  *  https://www.geeksforgeeks.org/find-square-root-number-upto-given-precision-using-binary-search/
   *
   */
 

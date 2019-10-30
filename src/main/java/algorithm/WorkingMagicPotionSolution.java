@@ -35,7 +35,7 @@ public class WorkingMagicPotionSolution {
 				} else {
 					magicPotion.append(ingredients.charAt(i));
 				}
-			} else {
+			} else { //i*2 has crossed n, simply add the characters
 				magicPotion.append(ingredients.charAt(i));
 			}
 		}
