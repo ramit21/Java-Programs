@@ -1,11 +1,8 @@
 package algorithm;
 
 /* 
- * Approach : Start partitioning the two arrays into two groups of halves 
- * (not two parts, but both partitioned should have same number of elements). 
- * The first half contains some first elements from the first and the second arrays, 
- * and the second half contains the rest (or the last) elements form the first and the second arrays.
- * Because the arrays can be of different sizes, it does not mean to take every half from each array. */
+ * Approach: https://www.youtube.com/watch?v=LPFhl65R7ww 
+ */
 public class MedianOfTwoSortedArrays {
 
 	// a: 1,2,5,11,15 // b: 3 4 13 17 18
@@ -20,7 +17,8 @@ public class MedianOfTwoSortedArrays {
         int high = xlength;
         while (low <= high) {
             int partitionX = (low + high)/2;
-            int partitionY = (xlength + ylength + 1)/2 - partitionX;
+            int partitionY = (xlength + ylength + 1)/2 - partitionX; 
+            //+1 here takes care of both even and odd before divide by 2
 
           System.out.println(partitionX +"\t"+partitionY);
             int maxLeftX = (partitionX == 0) ? Integer.MIN_VALUE : input1[partitionX - 1];
@@ -29,7 +27,7 @@ public class MedianOfTwoSortedArrays {
             int maxLeftY = (partitionY == 0) ? Integer.MIN_VALUE : input2[partitionY - 1];
             int minRightY = (partitionY == ylength) ? Integer.MAX_VALUE : input2[partitionY];
 
-            if (maxLeftX <= minRightY && maxLeftY <= minRightX) {
+            if (maxLeftX <= minRightY && maxLeftY <= minRightX) { //Break condition
               
                 if ((xlength + ylength) % 2 == 0) {
                     return ((double)Math.max(maxLeftX, maxLeftY) + Math.min(minRightX, minRightY))/2;

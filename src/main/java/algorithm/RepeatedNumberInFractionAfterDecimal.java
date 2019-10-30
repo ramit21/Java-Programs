@@ -1,9 +1,6 @@
 
 package algorithm;
 
-import java.math.BigDecimal;
-import java.util.Arrays;
-
 public class RepeatedNumberInFractionAfterDecimal {
 	/**
 	 * Return the fraction output in the following way Examples: If after decimal,
