@@ -13,7 +13,7 @@ minimum number of characters required to encode
 
 */
 
-public class WorkingMagicPotionSolution {
+public class MagicPotion {
 
 	private static Integer minimalSteps(String ingredients) {
 

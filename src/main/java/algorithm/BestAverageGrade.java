@@ -7,8 +7,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-import code.SysoutFunctionality;
-
 //  Find the best average grade.
 //  Given a list of student test scores
 //  Each student may have more than one test score in the list.

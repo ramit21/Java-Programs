@@ -8,6 +8,8 @@ public class RepeatedNumberInFractionAfterDecimal {
 	 * be represented as 0.(3) 6/11=0.54545454, this should be represented as 0.(54)
 	 * fractionRepresentation(1,2)=0.5 fractionRepresentation(1,3)=0.(3)
 	 * fractionRepresentation(6,11)=0.(54)
+	 * 
+	 * (slightly similar to magic potion)
 	 */
 	public static String fractionRepresentation(int num, int den) {
 		float d = (float) num / (float) den;

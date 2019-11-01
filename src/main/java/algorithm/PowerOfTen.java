@@ -4,8 +4,8 @@ public class PowerOfTen {
 	/**
 	 * Returns true if y is a power-of-10.
 	 * 
-	 * To check if y is power of x, simple sol is to calculate powers of x and see
-	 * if they become ewual to y or cross y
+	 * To check if y is power of x, simple sol. is to calculate powers of x and see
+	 * if they become equal to y or if they crossover y
 	 * 
 	 * The more optimal solution is given below
 	 */

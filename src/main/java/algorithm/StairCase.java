@@ -1,8 +1,5 @@
 package algorithm;
 
-import java.io.*;
-import java.util.*;
-
 /*
 
 ** There is a staircase with 'n' number of steps. A child

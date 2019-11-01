@@ -8,6 +8,7 @@ public class DistanceBetweenTwoWords {
    
    // E.g. for the document="Example we just made up"
    //   shortestDistance( document, "we", "just" ) == 4
+   // https://www.geeksforgeeks.org/minimum-distance-between-words-of-a-string/
    
   public static double shortestDistance(String document, String word1, String word2) {
     double shortest = document.length();

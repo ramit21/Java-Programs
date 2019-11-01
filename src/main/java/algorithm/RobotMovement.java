@@ -1,7 +1,6 @@
 package algorithm;
 
-import java.io.*;
-import java.util.*;
+import java.util.Arrays;
 
 
 //Implement the 'walk' method.

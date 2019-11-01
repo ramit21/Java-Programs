@@ -2,6 +2,7 @@ package algorithm;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class PrimeFactorization {
 	/**
@@ -10,8 +11,29 @@ public class PrimeFactorization {
 	 * 
 	 * Solution: https://www.geeksforgeeks.org/prime-factor/
 	 */
-	public static ArrayList<Integer> primeFactorization(int x) {
-		return (ArrayList<Integer>) Arrays.asList(2, 3);
+	public static List<Integer> primeFactorization(int x) {
+		List<Integer> primeFactors = new ArrayList<>();
+		if(x ==1) return primeFactors;
+		
+		while(x%2==0) {
+			x/= 2;
+			if(!primeFactors.contains(2)) {
+				primeFactors.add(2);
+			}
+		}
+		
+		//int sqrt = (int) Math.sqrt(x);
+		
+		for(int i=3; i<= x; i+= 2) {
+			while(x%i==0) {
+				x/= i;
+				if(!primeFactors.contains(i)) {
+					primeFactors.add(i);
+				}
+			}
+		}
+		
+		return primeFactors;
 	}
 
 	public static void main(String args[]) {

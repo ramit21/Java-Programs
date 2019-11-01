@@ -15,9 +15,24 @@ public class LongestUnifromString {
   static int[] longestUniformSubstring(String input){
     int longestStart = -1;
     int longestLength = 0;
+    int curStart = -1;
+    int curLength = 0;
+    char prevChar = Character.MIN_VALUE;
     
+    for(int i=0; i< input.length(); i++) {
+    	if(input.charAt(i) == prevChar) {
+    		curLength++;
+    	}else {
+    		if(curLength > longestLength) {
+    			longestLength = curLength;
+    			longestStart = curStart;
+    		}
+    		curStart = i;
+    		curLength = 1;
+    	}
+    	prevChar = input.charAt(i);
+    }
     
-    // your code goes here
     return new int[]{ longestStart, longestLength };
   }
 
