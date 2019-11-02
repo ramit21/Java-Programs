@@ -4,17 +4,25 @@ package algorithm;
 //     find the longest word or words in the dictionary that can be made from the letters
 //     Input: letters = "oet", dictionary = {"to","toe","toes"}
 //     Output: {"toe"}
-
-import java.util.*;
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
 
 public class DictioneryProblem {
 	
 	public static Set<String> longestWord(String letters, Dictionary dict) {
-		Set<String> result = new HashSet<String>();
-		if (dict.contains(letters)) {
-			result.add(letters);
+		Set<String> subsets = new HashSet<String>();
+		
+		return null;
+	}
+	
+	private void generateSubsets(String letters, Set<String> subsets){
+		for(int i=0; i< letters.length(); i++) {
+			Character curChar = letters.charAt(i);
+			letters = letters.substring(0,i) + letters.substring(i+1);
+			subsets.add(curChar.toString());
 		}
-		return result;
+		
 	}
 
 	public static boolean pass() {

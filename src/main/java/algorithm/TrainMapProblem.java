@@ -107,9 +107,9 @@ public class TrainMapProblem {
 
 		/*
 		 * Solution starts:
-		 * https://www.geeksforgeeks.org/shortest-path-unweighted-graph/ If it was
-		 * weighted graph, we would have used Djistra's algo For unweighted graphs, use
-		 * BFS, keeping a track of predecessors. Mantain visited nodes to avoid cycle.
+		 * https://www.geeksforgeeks.org/shortest-path-unweighted-graph/ If it was a
+		 * weighted graph, we would have used Djistra's algo. For unweighted graphs, use
+		 * BFS, keeping a track of predecessor paths. Maintain visited nodes to avoid cycle.
 		 */
 		public List<Station> shortestPath(String from, String to) {
 			Station source = stations.get(from);
@@ -120,21 +120,23 @@ public class TrainMapProblem {
 			Set<Station> visited = new HashSet<>(); 
 			visited.add(source);
 			Queue<Node> q = new LinkedList<>();
-			Node node = new Node(source);
-			q.add(node);
+			Node curNode = new Node(source);
+			curNode.getPathSoFar().add(source); //dont miss adding pathSoFar for the initial source
+			q.add(curNode);
 			while(!q.isEmpty()) {
-				node = q.poll();
-				for(Station neighbor : node.getStation().getNeighbours()) {
+				curNode = q.poll();
+				for(Station neighbor : curNode.getStation().getNeighbours()) {
 					
 					if(!visited.contains(neighbor)) {
 						
 						if(neighbor == dest) {
-							node.addPath(dest);
-							return node.getPathSoFar();
+							curNode.getPathSoFar().add(dest);
+							return curNode.getPathSoFar();
 						}
 						visited.add(neighbor);
-						Node newnode = new Node(neighbor, node.getPathSoFar());
-						newnode.addPath(neighbor);
+						Node newnode = new Node(neighbor);
+						newnode.getPathSoFar().addAll(curNode.getPathSoFar());
+						newnode.getPathSoFar().add(neighbor);
 						q.add(newnode);
 					}
 				}
@@ -146,28 +148,18 @@ public class TrainMapProblem {
 		class Node {
 			
 			Station station;
-			List<Station> pathSoFar;
+			List<Station> pathSoFar = new ArrayList<>();
 
 			public Node(Station station) {
 				this.station = station;
-				this.pathSoFar = new ArrayList<>();
-			}
-			
-			public Node(Station station, List<Station> pathSoFar) {
-				this.station = station;
-				this.pathSoFar = pathSoFar;
-			}
-			
-			public void addPath(Station station) {
-				pathSoFar.add(station);
-			}
-			
-			public List<Station> getPathSoFar(){
-				return pathSoFar;
 			}
 			
 			public Station getStation(){
 				return station;
+			}
+			
+			public List<Station> getPathSoFar(){
+				return pathSoFar;
 			}
 		}
 

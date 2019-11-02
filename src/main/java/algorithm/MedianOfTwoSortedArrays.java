@@ -31,7 +31,7 @@ public class MedianOfTwoSortedArrays {
               
                 if ((xlength + ylength) % 2 == 0) {
                     return ((double)Math.max(maxLeftX, maxLeftY) + Math.min(minRightX, minRightY))/2;
-                } else {
+                } else {//First partition has more elements
                     return (double)Math.max(maxLeftX, maxLeftY);
                 }
             } else if (maxLeftX > minRightY) { //we are too far on right side for partitionX. Go on left side.
