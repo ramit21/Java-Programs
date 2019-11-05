@@ -9,7 +9,8 @@ public class DistanceBetweenTwoWords {
 	// E.g. for the document="Example we just made up"
 	// shortestDistance( document, "we", "just" ) == 4
 	// https://www.geeksforgeeks.org/minimum-distance-between-words-of-a-string/
-	//special handling for word2 behind word 1, for case insensitiveness, and for comma full-stop
+	//special handling for word2 behind word 1, for case insensitiveness
+	//TODO handling for comma and full-stops
 
 	public static double shortestDistance(String document, String word1, String word2) {
 		word1 = word1.toLowerCase();
