@@ -21,6 +21,8 @@ public class AddFraction {
   }
   
   private static int gcd(int a, int b) {
+	  a = Math.abs(a);
+	  b = Math.abs(b);
 	  if(a==0) {
 		  return b;
 	  }
@@ -37,14 +39,18 @@ public class AddFraction {
   
   public static void main( String[] args ) {
 	boolean isPass = true;
-    int[] result = addFractions( new int[]{ 2, 3 }, new int[]{ 1, 2 } );
-    isPass &= (result[ 0 ] == 7 && result[ 1 ] == 6);
-    
-    result = addFractions( new int[]{ 2, 3 }, new int[]{ 1, 15 } );
-    isPass &= (result[ 0 ] == 11 && result[ 1 ] == 15);
-    
-    result = addFractions( new int[]{ 5, 15 }, new int[]{ 1, 3 } );
-    isPass &= (result[ 0 ] == 2 && result[ 1 ] == 3);
+		
+    int[] result = addFractions( new int[]{ 2, 3 }, new int[]{ 1, 2 } ); isPass
+	&= (result[ 0 ] == 7 && result[ 1 ] == 6);
+  
+	result = addFractions( new int[]{ 2, 3 }, new int[]{ 1, 15 } ); isPass &=
+	(result[ 0 ] == 11 && result[ 1 ] == 15);
+  
+	result = addFractions( new int[]{ 5, 15 }, new int[]{ 1, 3 } ); isPass &=
+	(result[ 0 ] == 2 && result[ 1 ] == 3);
+
+    result = addFractions( new int[]{ -2, 3 }, new int[]{ 1, 2 } );
+    isPass &= (result[ 0 ] == -1 && result[ 1 ] == 6);
     
     if(isPass) {
       System.out.println( "Test passed." );
