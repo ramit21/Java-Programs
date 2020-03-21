@@ -31,7 +31,7 @@ public class MagicPotion {
 				// System.out.println(stringToCompare+"\t"+ingredients.substring(i, 2 * i));
 				if (stringToCompare.equals(ingredients.substring(i, 2 * i))) {
 					magicPotion.append("*");
-					i = i + stringToCompare.length() - 1; //a -1 here as there is already a ++i in for loop
+					i = 2*i - 1; //a -1 here as there is already a ++i in for loop
 				} else {
 					magicPotion.append(ingredients.charAt(i));
 				}

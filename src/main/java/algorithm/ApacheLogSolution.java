@@ -40,7 +40,7 @@ public class ApacheLogSolution {
 		try {
 			Integer topCount = ipAddressCountMap.values().stream().mapToInt(v -> v).max()
 					.orElseThrow(IllegalArgumentException::new);
-			return ipAddressCountMap.entrySet().stream().filter(x -> x.getValue() == topCount).map(Map.Entry::getKey)
+			return ipAddressCountMap.entrySet().stream().filter(x -> x.getValue() == topCount).map(e-> e.getKey())
 					.collect(Collectors.toCollection(HashSet::new));
 		} catch (IllegalArgumentException exc) {
 			System.out.println("Couldn't find a Valid IP Address in any of the lines!! ");

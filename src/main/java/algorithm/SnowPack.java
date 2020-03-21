@@ -49,5 +49,7 @@ public class SnowPack {
 		} else {
 			System.out.println("Tests fail.");
 		}
+		
+		System.out.println(computeSnowpack(new Integer[] { 0, 1, 3, 0, 4 }));
 	}
 }
