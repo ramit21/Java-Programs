@@ -39,7 +39,7 @@ public class CountDownLatchToStopMainThread {
 			e.printStackTrace();
 		}
 		ex.shutdown();
-		System.err.println("Main thread finishes");
+		System.err.println("Main thread finishes and countlatch count is: "+ cd.getCount());
 	}
 
 }
