@@ -6,6 +6,19 @@ package algorithm;
  */
 public class ArrayGrouping {
 	
+	//O(n) Time , but does not maintain order
+	private static void groupArrayOrderN(int arr[]){
+		
+		for(int i=0, j=0; i< arr.length; i++){
+			if(arr[i] < 0){
+				int temp = arr[j];
+				arr[j] = arr[i];
+				arr[i] = temp;
+				j++;
+			}
+		}
+	}
+		
 	//O(n^2) Time and O(1) Aux space solution
 	private static void modifiedInsertionSort(int arr[]){
 		for(int i=0; i<arr.length-1; i++ ){
@@ -28,6 +41,7 @@ public class ArrayGrouping {
 	public static void main(String[] args) {
 		int[] arr = {-4,3,5,-7,2,-1};
 		modifiedInsertionSort(arr);
+		//groupArrayOrderN(arr);
 		printArray(arr);
 	}
 	
