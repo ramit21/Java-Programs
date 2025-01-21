@@ -10,6 +10,10 @@ public class SomeConcepts {
     private static String no = "1";
 
     public static void main(String[] args) {
+        String s1 = "Hello";
+        testStringPassing(s1);
+        System.out.println("String was passed by value, its still " + s1); //Ans. Hello
+
         forLoopIncrementOrder();
         testStringIntern();
         testAssertFeature();
@@ -29,6 +33,10 @@ public class SomeConcepts {
 
         testFinally();
         testSystemExit();
+    }
+
+    private static void testStringPassing(String s1) {
+        s1 = "World";
     }
 
     private static int testFinallyReturn() {
