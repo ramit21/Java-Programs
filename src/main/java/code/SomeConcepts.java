@@ -1,10 +1,7 @@
 package code;
 
 import java.io.IOException;
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 public class SomeConcepts {
     private static String no = "1";
@@ -28,11 +25,23 @@ public class SomeConcepts {
         Set<? super IOException> testGenericSet = new HashSet<IOException>();
         Set<? super IOException> testGenericSet2 = new HashSet<Exception>();
 
+        testSetKey();
 
         testExceptionflow();
-
         testFinally();
+        //testError(); //uncomment to test this one
         testSystemExit();
+    }
+
+
+    private static void testError() {
+        try {
+            throw new Error();
+        } catch (Exception e) { //catch Error instead, but not recommended
+            System.out.println("Caught exception");
+        } finally {
+            System.out.println("Finally is printed before Error occurs");
+        }
     }
 
     private static void testStringPassing(String s1) {
@@ -48,6 +57,28 @@ public class SomeConcepts {
         } finally {
             return 3;
         }
+    }
+
+    private static void testSetKey() {
+        //If hashcode and equals are not overidden, then HashSet uses identity '==' to decide if 2 objects are equal,
+        //else it uses the hashcode.
+        //Hence never manipulate a member variable that is driving teh hashcode after it has been inserted into hashcode.
+        Set<Key> set = new HashSet<>();
+        Key k1 = new Key(1);
+        Key k2 = new Key(2);
+        set.add(k1);
+        set.add(k1);
+        set.add(k2);
+        set.add(k2);
+        System.out.println("Set sizes:"); //Ans: 2 2 1 1
+        System.out.print(set.size() + " ");
+        k2.i = 1; //even though hashcode of both objects are now same, k2 will stay in the set with its original has value of 2
+        System.out.print(set.size() + " ");
+        set.remove(k1);
+        System.out.print(set.size() + " ");
+        set.remove(k2);//k2 can't be removed as it was inserted with hashcode of 2, but now removal is being attempted with hashcode of 1
+        System.out.print(set.size() + " ");
+        System.out.println();
     }
 
     private static void testExceptionflow() {
@@ -136,6 +167,23 @@ public class SomeConcepts {
         }
     }
 
+    private static class Key {
+        public int i;
+
+        public Key(int i) {
+            this.i = i;
+        }
+
+        @Override
+        public boolean equals(Object o) {
+            return i == ((Key) o).i;
+        }
+
+        @Override
+        public int hashCode() {
+            return i;
+        }
+    }
 
 }
 
