@@ -1,15 +1,21 @@
 package code;
 
 import java.io.IOException;
-import java.util.*;
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.HashSet;
+import java.util.Set;
 
 public class SomeConcepts {
     private static String no = "1";
 
     public static void main(String[] args) {
+
         String s1 = "Hello";
         testStringPassing(s1);
         System.out.println("String was passed by value, its still " + s1); //Ans. Hello
+
+        alphabetIndex();
 
         forLoopIncrementOrder();
         testStringIntern();
@@ -31,6 +37,15 @@ public class SomeConcepts {
         testFinally();
         //testError(); //uncomment to test this one
         testSystemExit();
+    }
+
+    private static void alphabetIndex() {
+        String str = "bat";
+        for (Character c : str.toCharArray()) {
+            int pos = (c - 'a');
+            System.out.print(c + " is alphabet no " + pos + " ; ");
+        }
+        System.out.println();
     }
 
 
