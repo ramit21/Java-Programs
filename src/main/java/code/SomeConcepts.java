@@ -131,7 +131,8 @@ public class SomeConcepts {
             sum += i;
             System.out.println("i = " + i + ", j = " + j + ", sum = " + sum);
         }
-        System.out.println(sum); //Ans is 6 since increment section is executed left to right, ie first ++i, and then j=i+1
+        //Ans is 6 since increment section inside for loop is executed left to right, ie first ++i, and then j=i+1
+        System.out.println(sum);
     }
 
     private static void testStringIntern() {
