@@ -5,7 +5,19 @@
 	<artifactId>java-concepts</artifactId>
 	<packaging>jar</packaging>
 	<version>1.0-SNAPSHOT</version>
-	<name>java-concepts</name>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>11</source>
+                    <target>11</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+    <name>java-concepts</name>
 	<url>http://maven.apache.org</url>
 	<properties>
 		<maven.compiler.source>1.8</maven.compiler.source>
@@ -15,8 +27,13 @@
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<version>4.4</version>
+			<version>4.13.2</version>
 			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<scope>provided</scope>
 		</dependency>
 		<!-- http://mvnrepository.com/artifact/com.googlecode.json-simple/json-simple -->
 		<dependency>
