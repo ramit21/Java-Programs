@@ -20,8 +20,8 @@
     <name>java-concepts</name>
 	<url>http://maven.apache.org</url>
 	<properties>
-		<maven.compiler.source>1.8</maven.compiler.source>
-		<maven.compiler.target>1.8</maven.compiler.target>
+		<maven.compiler.source>1.11</maven.compiler.source>
+		<maven.compiler.target>1.11</maven.compiler.target>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -33,6 +33,7 @@
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
+			<version>1.18.30</version>
 			<scope>provided</scope>
 		</dependency>
 		<!-- http://mvnrepository.com/artifact/com.googlecode.json-simple/json-simple -->
