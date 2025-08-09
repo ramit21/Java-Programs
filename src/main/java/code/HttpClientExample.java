@@ -61,3 +61,21 @@ class Comment {
     private String email;
     private String body;
 }
+
+/*
+Note if Lombok annotations are not available, then you have to write boiler plate code in pojo constructor:
+@JsonCreator
+    public Comment(
+        @JsonProperty("postId") Long postId,
+        @JsonProperty("id") Long id,
+        @JsonProperty("name") String name,
+        @JsonProperty("email") String email,
+        @JsonProperty("body") String body
+    ) {
+        this.postId = postId;
+        this.id = id;
+        this.name = name;
+        this.email = email;
+        this.body = body;
+    }
+ */
