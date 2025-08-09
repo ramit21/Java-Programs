@@ -25,12 +25,12 @@ public class HttpClientExample {
     public static void main(String[] args) {
 
         try {
-            HttpClient client = HttpClient.newHttpClient();
             URI uri = new URI("https", "jsonplaceholder.typicode.com", "/comments", "postId=1", null);
             HttpRequest request = HttpRequest.newBuilder()
                     .uri(uri)
                     .GET()
                     .build();
+            HttpClient client = HttpClient.newHttpClient();
             HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
             //System.out.println("Status = " + response.statusCode() + "\nResponse: " + response.body());
             JSONParser parser = new JSONParser();
