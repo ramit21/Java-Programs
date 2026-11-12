@@ -7,19 +7,20 @@ import java.lang.reflect.Proxy;
 
 public class ProxyUsingReflection {
 
+	/* commented due to compilation errors
 	public static void main(String[] args) {
 		Task task = (Task)ProxyFactory.newInstance(new TaskImpl());
 		task.setData("Test");
 		System.out.println(task.getCalData(5));
-	}
+	}*/
 }
 
-interface Task {
+interface TaskIntf {
 	public void setData(String data);
 	public int getCalData(int x);
 }
 
-class TaskImpl implements Task {
+class TaskImpl implements TaskIntf {
 	@Override
 	public void setData(String data) {
 		System.out.println(data+ " Data is saved");
