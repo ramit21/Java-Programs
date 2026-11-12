@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 
 import java.util.*;
 
+//has a test case as well
 public class LogStreamAnalyzer {
 
     /**
@@ -90,6 +91,9 @@ public class LogStreamAnalyzer {
         }
 
         return null;
+        /*
+        for a more otimal solution, along with count map, also maintain LinkedHashSet<String> for currently unique IDs for O(1)
+         */
     }
 }
 
